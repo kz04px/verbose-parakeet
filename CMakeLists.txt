@@ -26,6 +26,7 @@ endif()
 add_executable(
     swizzles
     src/main.cpp
+    src/options.cpp
 )
 
 # Add test executable
