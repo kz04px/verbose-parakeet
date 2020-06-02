@@ -27,12 +27,18 @@ add_executable(
     swizzles
     src/main.cpp
     src/options.cpp
+    src/protocols/uci/extensions.cpp
+    src/protocols/uci/uci.cpp
 )
 
 # Add test executable
 add_executable(
     swizzles-test
     tests/main.cpp
+    tests/uci.cpp
+    src/options.cpp
+    src/protocols/uci/uci.cpp
+    src/protocols/uci/extensions.cpp
 )
 
 set_property(TARGET swizzles-test PROPERTY INTERPROCEDURAL_OPTIMIZATION_RELEASE FALSE)
