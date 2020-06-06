@@ -26,9 +26,18 @@ endif()
 add_executable(
     swizzles
     src/main.cpp
+
     src/options.cpp
+
     src/protocols/uci/extensions.cpp
     src/protocols/uci/uci.cpp
+
+    src/eval/eval.cpp
+
+    src/search/alphabeta.cpp
+    src/search/controller.cpp
+    src/search/pv.cpp
+    src/search/search.cpp
 )
 
 # Add test executable
@@ -36,9 +45,23 @@ add_executable(
     swizzles-test
     tests/main.cpp
     tests/uci.cpp
+    tests/mates.cpp
+    tests/movetime.cpp
+    tests/stalemate.cpp
+    tests/underpromote.cpp
+    tests/50moves.cpp
+
     src/options.cpp
+
     src/protocols/uci/uci.cpp
     src/protocols/uci/extensions.cpp
+
+    src/eval/eval.cpp
+
+    src/search/alphabeta.cpp
+    src/search/controller.cpp
+    src/search/pv.cpp
+    src/search/search.cpp
 )
 
 set_property(TARGET swizzles-test PROPERTY INTERPROCEDURAL_OPTIMIZATION_RELEASE FALSE)
