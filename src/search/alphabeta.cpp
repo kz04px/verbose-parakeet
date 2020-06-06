@@ -12,6 +12,10 @@ int alphabeta(libchess::Position &pos, Stack *ss, int alpha, const int beta, int
     ss->pv.clear();
     const auto in_check = pos.in_check();
 
+    if (in_check) {
+        depth++;
+    }
+
     if (pos.threefold()) {
         return 0;
     }
