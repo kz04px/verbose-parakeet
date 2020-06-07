@@ -1,22 +1,40 @@
 #include "eval.hpp"
+#include <array>
+#include "pst.hpp"
+#include "score.hpp"
 
-int eval(const libchess::Position &pos) {
-    const auto us = pos.turn();
-    const auto them = !us;
+constexpr Score piece_values[] = {
+    {100, 100},
+    {300, 300},
+    {300, 300},
+    {500, 500},
+    {900, 900},
+    {1000000, 1000000},
+};
 
-    int score = 0;
+template <libchess::Side side>
+[[nodiscard]] Score eval_side(const libchess::Position &pos) {
+    Score score;
 
-    score += 100 * pos.pieces(us, libchess::Piece::Pawn).count();
-    score += 300 * pos.pieces(us, libchess::Piece::Knight).count();
-    score += 300 * pos.pieces(us, libchess::Piece::Bishop).count();
-    score += 500 * pos.pieces(us, libchess::Piece::Rook).count();
-    score += 900 * pos.pieces(us, libchess::Piece::Queen).count();
+    for (const auto p : libchess::pieces) {
+        // Piece values
+        score += piece_values[p] * pos.pieces(side, p).count();
 
-    score -= 100 * pos.pieces(them, libchess::Piece::Pawn).count();
-    score -= 300 * pos.pieces(them, libchess::Piece::Knight).count();
-    score -= 300 * pos.pieces(them, libchess::Piece::Bishop).count();
-    score -= 500 * pos.pieces(them, libchess::Piece::Rook).count();
-    score -= 900 * pos.pieces(them, libchess::Piece::Queen).count();
+        for (const auto sq : pos.pieces(side, p)) {
+            // Piece square tables
+            score += pst_value<side>(p, sq);
+        }
+    }
 
     return score;
+}
+
+int eval(const libchess::Position &pos) {
+    Score score;
+    score += eval_side<libchess::Side::White>(pos);
+    score -= eval_side<libchess::Side::Black>(pos);
+    if (pos.turn() == libchess::Side::Black) {
+        return -score.phase(pos);
+    }
+    return score.phase(pos);
 }
