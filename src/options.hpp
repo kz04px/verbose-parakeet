@@ -23,7 +23,7 @@ namespace options {
 extern Spin hash;
 extern Spin threads;
 extern Spin contempt;
-extern Combo test;
+extern Combo searchtype;
 
 }  // namespace options
 
