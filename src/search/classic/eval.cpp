@@ -3,6 +3,8 @@
 #include "../score.hpp"
 #include "pst.hpp"
 
+namespace classic {
+
 constexpr Score piece_values[] = {
     {100, 100},
     {300, 300},
@@ -38,3 +40,5 @@ int eval(const libchess::Position &pos) {
     }
     return score.phase(pos);
 }
+
+}  // namespace classic

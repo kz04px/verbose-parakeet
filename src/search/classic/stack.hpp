@@ -3,9 +3,13 @@
 
 #include "../pv.hpp"
 
+namespace classic {
+
 struct Stack {
     int ply;
     PV pv;
 };
+
+}  // namespace classic
 
 #endif

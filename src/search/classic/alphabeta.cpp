@@ -4,6 +4,8 @@
 #include "../controller.hpp"
 #include "eval.hpp"
 
+namespace classic {
+
 int alphabeta(libchess::Position &pos, Stack *ss, int alpha, const int beta, int depth) {
     assert(-mate_score <= alpha);
     assert(alpha < beta);
@@ -80,3 +82,5 @@ int alphabeta(libchess::Position &pos, Stack *ss, int alpha, const int beta, int
 
     return alpha;
 }
+
+}  // namespace classic
