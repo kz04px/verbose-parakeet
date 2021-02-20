@@ -52,7 +52,7 @@ void uci() {
     std::cout << options::hash << "\n";
     std::cout << options::threads << "\n";
     std::cout << options::contempt << "\n";
-    std::cout << options::test << "\n";
+    std::cout << options::searchtype << "\n";
 
     std::cout << "uciok" << std::endl;
 }
@@ -200,13 +200,17 @@ void setoption(std::stringstream &ss) {
     }
 
     try {
-        const auto val = std::stoi(value);
         if (name == "Hash") {
+            const auto val = std::stoi(value);
             options::hash.val = clamp(options::hash.min, options::hash.max, val);
         } else if (name == "Threads") {
+            const auto val = std::stoi(value);
             options::threads.val = clamp(options::threads.min, options::threads.max, val);
         } else if (name == "Contempt") {
+            const auto val = std::stoi(value);
             options::contempt.val = clamp(options::contempt.min, options::contempt.max, val);
+        } else if (name == "SearchType") {
+            options::searchtype.name = value;
         }
     } catch (...) {
     }
