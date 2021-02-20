@@ -1,5 +1,5 @@
-#ifndef EVAL_HPP
-#define EVAL_HPP
+#ifndef CLASSIC_EVAL_HPP
+#define CLASSIC_EVAL_HPP
 
 #include <libchess/position.hpp>
 

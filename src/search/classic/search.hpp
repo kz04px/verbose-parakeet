@@ -1,5 +1,5 @@
-#ifndef SEARCH_HPP
-#define SEARCH_HPP
+#ifndef CLASSIC_SEARCH_HPP
+#define CLASSIC_SEARCH_HPP
 
 #include <cstdint>
 #include <functional>
