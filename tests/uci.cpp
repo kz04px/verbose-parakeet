@@ -1,6 +1,5 @@
 #include "../src/protocols/uci.hpp"
 #include <catch2/catch.hpp>
-#include <iostream>
 #include <libchess/position.hpp>
 #include <sstream>
 #include <string>
