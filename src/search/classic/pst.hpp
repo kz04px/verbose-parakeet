@@ -6,6 +6,8 @@
 #include <libchess/square.hpp>
 #include "../score.hpp"
 
+namespace classic {
+
 // clang-format off
 constexpr Score pst[6][64] = 
 {
@@ -75,5 +77,7 @@ template <libchess::Side side>
         return pst[piece][static_cast<int>(sq.flip())];
     }
 }
+
+}  // namespace classic
 
 #endif

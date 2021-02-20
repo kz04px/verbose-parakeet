@@ -7,6 +7,8 @@
 #include "alphabeta.hpp"
 #include "stack.hpp"
 
+namespace classic {
+
 std::pair<libchess::Move, libchess::Move> search(libchess::Position pos) {
     return search(pos, [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {});
 }
@@ -53,3 +55,5 @@ std::pair<libchess::Move, libchess::Move> search(libchess::Position pos, const i
 
     return {bestmove, ponder};
 }
+
+}  // namespace classic

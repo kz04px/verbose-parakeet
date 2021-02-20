@@ -137,7 +137,7 @@ void search_wrapper(libchess::Position pos) {
         std::cout << std::endl;
     };
 
-    const auto &[bestmove, ponder] = search(pos, uci_printer);
+    const auto &[bestmove, ponder] = classic::search(pos, uci_printer);
     std::cout << "bestmove " << bestmove;
     if (ponder) {
         std::cout << " ponder " << ponder;

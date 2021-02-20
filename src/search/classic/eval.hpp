@@ -3,6 +3,10 @@
 
 #include <libchess/position.hpp>
 
+namespace classic {
+
 int eval(const libchess::Position &pos);
+
+}  // namespace classic
 
 #endif
