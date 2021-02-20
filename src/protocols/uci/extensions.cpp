@@ -24,6 +24,8 @@ void perft(libchess::Position &pos, std::stringstream &ss) {
     std::cout << " nodes " << nodes;
     std::cout << " time " << time.count();
     std::cout << std::endl;
+
+    std::cout << "nodes " << nodes << std::endl;
 }
 
 void split(libchess::Position &pos, std::stringstream &ss) {
