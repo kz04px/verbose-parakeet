@@ -1,5 +1,5 @@
-#ifndef EVAL_PST_H
-#define EVAL_PST_H
+#ifndef EVAL_PST_HPP
+#define EVAL_PST_HPP
 
 #include <libchess/piece.hpp>
 #include <libchess/side.hpp>
