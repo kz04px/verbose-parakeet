@@ -1,7 +1,7 @@
 #ifndef SEARCH_STACK_HPP
 #define SEARCH_STACK_HPP
 
-#include "pv.hpp"
+#include "../pv.hpp"
 
 struct Stack {
     int ply;

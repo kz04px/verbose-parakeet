@@ -1,7 +1,7 @@
 #include "eval.hpp"
 #include <array>
+#include "../score.hpp"
 #include "pst.hpp"
-#include "score.hpp"
 
 constexpr Score piece_values[] = {
     {100, 100},

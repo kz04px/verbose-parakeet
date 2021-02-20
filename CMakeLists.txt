@@ -32,12 +32,12 @@ add_executable(
     src/protocols/uci/extensions.cpp
     src/protocols/uci/uci.cpp
 
-    src/eval/eval.cpp
-
-    src/search/alphabeta.cpp
-    src/search/controller.cpp
     src/search/pv.cpp
-    src/search/search.cpp
+    src/search/controller.cpp
+
+    src/search/classic/alphabeta.cpp
+    src/search/classic/eval.cpp
+    src/search/classic/search.cpp
 )
 
 # Add test executable
@@ -45,23 +45,24 @@ add_executable(
     swizzles-test
     tests/main.cpp
     tests/uci.cpp
-    tests/mates.cpp
-    tests/movetime.cpp
-    tests/stalemate.cpp
-    tests/underpromote.cpp
-    tests/50moves.cpp
+
+    tests/classic/mates.cpp
+    tests/classic/movetime.cpp
+    tests/classic/stalemate.cpp
+    tests/classic/underpromote.cpp
+    tests/classic/50moves.cpp
 
     src/options.cpp
 
     src/protocols/uci/uci.cpp
     src/protocols/uci/extensions.cpp
 
-    src/eval/eval.cpp
-
-    src/search/alphabeta.cpp
-    src/search/controller.cpp
     src/search/pv.cpp
-    src/search/search.cpp
+    src/search/controller.cpp
+
+    src/search/classic/alphabeta.cpp
+    src/search/classic/eval.cpp
+    src/search/classic/search.cpp
 )
 
 set_property(TARGET swizzles-test PROPERTY INTERPROCEDURAL_OPTIMIZATION_RELEASE FALSE)

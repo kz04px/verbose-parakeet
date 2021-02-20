@@ -5,8 +5,8 @@
 #include <sstream>
 #include <thread>
 #include "../../options.hpp"
+#include "../../search/classic/search.hpp"
 #include "../../search/controller.hpp"
-#include "../../search/search.hpp"
 #include "extensions.hpp"
 
 namespace uci {

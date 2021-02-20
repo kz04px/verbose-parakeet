@@ -2,9 +2,9 @@
 #include <cassert>
 #include <functional>
 #include <libchess/position.hpp>
+#include "../controller.hpp"
+#include "../pv.hpp"
 #include "alphabeta.hpp"
-#include "controller.hpp"
-#include "pv.hpp"
 #include "stack.hpp"
 
 std::pair<libchess::Move, libchess::Move> search(libchess::Position pos) {
