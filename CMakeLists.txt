@@ -32,6 +32,7 @@ add_executable(
     src/protocols/uci/extensions.cpp
     src/protocols/uci/uci.cpp
 
+    src/search/search.cpp
     src/search/pv.cpp
     src/search/controller.cpp
 
@@ -57,6 +58,7 @@ add_executable(
     src/protocols/uci/uci.cpp
     src/protocols/uci/extensions.cpp
 
+    src/search/search.cpp
     src/search/pv.cpp
     src/search/controller.cpp
 
