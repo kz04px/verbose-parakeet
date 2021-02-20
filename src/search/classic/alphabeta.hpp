@@ -1,5 +1,5 @@
-#ifndef ALPHABETA_HPP
-#define ALPHABETA_HPP
+#ifndef CLASSIC_ALPHABETA_HPP
+#define CLASSIC_ALPHABETA_HPP
 
 #include <libchess/position.hpp>
 #include "stack.hpp"

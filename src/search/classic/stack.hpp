@@ -1,5 +1,5 @@
-#ifndef SEARCH_STACK_HPP
-#define SEARCH_STACK_HPP
+#ifndef CLASSIC_SEARCH_STACK_HPP
+#define CLASSIC_SEARCH_STACK_HPP
 
 #include "../pv.hpp"
 
