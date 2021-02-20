@@ -4,6 +4,8 @@
 #include "../../src/search/classic/search.hpp"
 #include "../../src/search/controller.hpp"
 
+auto info_handler = [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {};
+
 TEST_CASE("Underpromotions") {
     const std::pair<std::string, std::string> tests[] = {
         {"6n1/5P1k/5Q2/8/8/8/8/7K w - - 0 1", "f7f8n"},
@@ -15,7 +17,7 @@ TEST_CASE("Underpromotions") {
         controller.reset();
         controller.set_depth(2);
         auto pos = libchess::Position{fen};
-        const auto [bestmove, ponder] = search(pos);
+        const auto [bestmove, ponder] = classic::search(pos, info_handler);
         REQUIRE(static_cast<std::string>(bestmove) == movestr);
     }
 }

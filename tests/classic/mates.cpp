@@ -4,6 +4,8 @@
 #include "../../src/search/classic/search.hpp"
 #include "../../src/search/controller.hpp"
 
+auto info_handler = [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {};
+
 TEST_CASE("Checkmate") {
     const std::pair<std::string, std::string> tests[] = {
         {"3k4/8/3K4/8/5R2/8/8/8 w - - 0 1", "f4f8"},
@@ -17,7 +19,7 @@ TEST_CASE("Checkmate") {
         controller.reset();
         controller.set_depth(2);
         auto pos = libchess::Position{fen};
-        const auto [bestmove, _] = search(pos);
+        const auto [bestmove, _] = classic::search(pos, info_handler);
         REQUIRE(static_cast<std::string>(bestmove) == movestr);
     }
 }
@@ -35,7 +37,7 @@ TEST_CASE("Checkmate with castling") {
         controller.reset();
         controller.set_depth(2);
         auto pos = libchess::Position{fen};
-        const auto [bestmove, _] = search(pos);
+        const auto [bestmove, _] = classic::search(pos, info_handler);
         REQUIRE(static_cast<std::string>(bestmove) == movestr);
     }
 }
@@ -51,7 +53,7 @@ TEST_CASE("Checkmate 50moves priority") {
         controller.reset();
         controller.set_depth(2);
         auto pos = libchess::Position{fen};
-        const auto [bestmove, _] = search(pos);
+        const auto [bestmove, _] = classic::search(pos, info_handler);
         REQUIRE(static_cast<std::string>(bestmove) == movestr);
     }
 }

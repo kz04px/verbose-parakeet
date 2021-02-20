@@ -7,6 +7,7 @@
 #include "../../options.hpp"
 #include "../../search/classic/search.hpp"
 #include "../../search/controller.hpp"
+#include "../../search/search.hpp"
 #include "extensions.hpp"
 
 namespace uci {
@@ -137,7 +138,7 @@ void search_wrapper(libchess::Position pos) {
         std::cout << std::endl;
     };
 
-    const auto &[bestmove, ponder] = classic::search(pos, uci_printer);
+    const auto &[bestmove, ponder] = search(pos, uci_printer);
     std::cout << "bestmove " << bestmove;
     if (ponder) {
         std::cout << " ponder " << ponder;
@@ -234,6 +235,13 @@ void listen() {
         } else if (word == "quit") {
             return;
         }
+    }
+
+    // Set the search type
+    if (options::searchtype.get() == "Classic") {
+        search = classic::search;
+    } else {
+        return;
     }
 
     auto pos = libchess::Position{"startpos"};
