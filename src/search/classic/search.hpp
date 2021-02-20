@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <functional>
 #include <libchess/position.hpp>
-#include "pv.hpp"
+#include "../pv.hpp"
 
 using info_printer = std::function<void(int depth, int score, std::uint64_t nodes, int time, const PV &pv)>;
 

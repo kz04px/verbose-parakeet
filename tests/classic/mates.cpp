@@ -1,8 +1,8 @@
 #include <catch2/catch.hpp>
 #include <libchess/position.hpp>
 #include <string>
-#include "../src/search/controller.hpp"
-#include "../src/search/search.hpp"
+#include "../../src/search/classic/search.hpp"
+#include "../../src/search/controller.hpp"
 
 TEST_CASE("Checkmate") {
     const std::pair<std::string, std::string> tests[] = {

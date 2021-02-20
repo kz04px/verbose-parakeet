@@ -1,17 +1,18 @@
 #include <catch2/catch.hpp>
 #include <libchess/position.hpp>
 #include <string>
-#include "../src/search/controller.hpp"
-#include "../src/search/search.hpp"
+#include "../../src/search/classic/search.hpp"
+#include "../../src/search/controller.hpp"
 
-TEST_CASE("Underpromotions") {
+TEST_CASE("Fifty move draw") {
     const std::pair<std::string, std::string> tests[] = {
-        {"6n1/5P1k/5Q2/8/8/8/8/7K w - - 0 1", "f7f8n"},
-        {"7k/8/8/8/8/5q2/5p1K/6N1 b - - 0 1", "f2f1n"},
+        {"7k/8/R7/1R6/7K/8/7P/8 w - - 99 1", "h2h3"},
+        {"8/7p/8/7k/1r6/r7/8/7K b - - 99 1", "h7h6"},
+        {"8/8/8/P7/8/6n1/3R4/R3K2k w Q - 99 1", "a5a6"},
+        {"r3k2K/3r4/6N1/8/p7/8/8/8 b q - 99 1", "a4a3"},
     };
 
     for (const auto &[fen, movestr] : tests) {
-        INFO(fen);
         controller.reset();
         controller.set_depth(2);
         auto pos = libchess::Position{fen};

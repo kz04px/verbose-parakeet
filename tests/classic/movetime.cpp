@@ -1,8 +1,8 @@
 #include <catch2/catch.hpp>
 #include <libchess/position.hpp>
 #include <string>
-#include "../src/search/controller.hpp"
-#include "../src/search/search.hpp"
+#include "../../src/search/classic/search.hpp"
+#include "../../src/search/controller.hpp"
 
 TEST_CASE("Movetime") {
     constexpr std::array<int, 3> movetimes = {20, 100, 200};

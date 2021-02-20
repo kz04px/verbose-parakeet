@@ -4,7 +4,7 @@
 #include <libchess/piece.hpp>
 #include <libchess/side.hpp>
 #include <libchess/square.hpp>
-#include "score.hpp"
+#include "../score.hpp"
 
 // clang-format off
 constexpr Score pst[6][64] = 

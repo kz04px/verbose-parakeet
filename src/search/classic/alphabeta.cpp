@@ -1,8 +1,8 @@
 #include "alphabeta.hpp"
 #include <cassert>
 #include <limits>
-#include "../eval/eval.hpp"
-#include "controller.hpp"
+#include "../controller.hpp"
+#include "eval.hpp"
 
 int alphabeta(libchess::Position &pos, Stack *ss, int alpha, const int beta, int depth) {
     assert(-mate_score <= alpha);
