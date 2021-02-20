@@ -7,6 +7,7 @@
 #include "../../options.hpp"
 #include "../../search/classic/search.hpp"
 #include "../../search/controller.hpp"
+#include "../../search/random/search.hpp"
 #include "../../search/search.hpp"
 #include "extensions.hpp"
 
@@ -240,6 +241,8 @@ void listen() {
     // Set the search type
     if (options::searchtype.get() == "Classic") {
         search = classic::search;
+    } else if (options::searchtype.get() == "Random") {
+        search = rando::search;
     } else {
         return;
     }
