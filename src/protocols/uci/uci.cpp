@@ -210,7 +210,7 @@ void setoption(std::stringstream &ss) {
             const auto val = std::stoi(value);
             options::contempt.val = clamp(options::contempt.min, options::contempt.max, val);
         } else if (name == "SearchType") {
-            options::searchtype.name = value;
+            options::searchtype.set(value);
         }
     } catch (...) {
     }
