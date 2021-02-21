@@ -148,7 +148,7 @@ void search_wrapper(libchess::Position pos) {
         std::cout << std::endl;
     };
 
-    const auto &[bestmove, ponder] = search(pos, uci_printer);
+    const auto &[bestmove, ponder] = player::search(pos, uci_printer);
     std::cout << "bestmove " << bestmove;
     if (ponder) {
         std::cout << " ponder " << ponder;
@@ -248,10 +248,10 @@ void listen() {
 
     // Set the search type
     if (options::searchtype.get() == "Classic") {
-        search = classic::search;
-        eval = classic::eval;
+        player::search = classic::search;
+        player::eval = classic::eval;
     } else if (options::searchtype.get() == "Random") {
-        search = rando::search;
+        player::search = rando::search;
     } else {
         return;
     }
@@ -286,7 +286,7 @@ void listen() {
         } else if (word == "split") {
             extension::split(pos, ss);
         } else if (word == "eval") {
-            const auto score = eval(pos);
+            const auto score = player::eval(pos);
             std::cout << "info string eval " << score << std::endl;
         } else if (word == "quit") {
             break;
