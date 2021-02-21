@@ -59,6 +59,7 @@ add_executable(
     tests/greedy/50moves.cpp
     tests/greedy/mates.cpp
     tests/greedy/movetime.cpp
+    tests/greedy/search.cpp
     tests/greedy/stalemate.cpp
     tests/greedy/underpromote.cpp
 
