@@ -6,7 +6,7 @@
 
 auto info_handler = [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {};
 
-TEST_CASE("Fifty move draw") {
+TEST_CASE("Classic - Fifty move draw") {
     const std::pair<std::string, std::string> tests[] = {
         {"7k/8/R7/1R6/7K/8/7P/8 w - - 99 1", "h2h3"},
         {"8/7p/8/7k/1r6/r7/8/7K b - - 99 1", "h7h6"},

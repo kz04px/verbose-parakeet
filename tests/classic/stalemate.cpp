@@ -6,7 +6,7 @@
 
 auto info_handler = [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {};
 
-TEST_CASE("Stalemate") {
+TEST_CASE("Classic - Stalemate") {
     const std::pair<std::string, std::string> tests[] = {
         {"kb4r1/p7/8/8/8/6q1/8/R6K w - - 0 1", "a1a7"},
         {"r6k/8/6Q1/8/8/8/P7/KB4R1 b - - 0 1", "a8a2"},

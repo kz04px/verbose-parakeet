@@ -6,7 +6,7 @@
 
 auto info_handler = [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {};
 
-TEST_CASE("Movetime") {
+TEST_CASE("Classic - Movetime") {
     constexpr std::array<int, 3> movetimes = {20, 100, 200};
     auto pos = libchess::Position{"startpos"};
 
