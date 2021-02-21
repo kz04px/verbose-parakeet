@@ -3,6 +3,7 @@
 #include <libchess/position.hpp>
 #include <sstream>
 #include "../../options.hpp"
+#include "../../search/search.hpp"
 #include "../uci.hpp"
 
 namespace uci::extension {
@@ -56,6 +57,11 @@ void split(libchess::Position &pos, std::stringstream &ss) {
 
 void display(const libchess::Position &pos) {
     std::cout << pos << std::endl;
+}
+
+void eval(const libchess::Position &pos) {
+    const auto score = player::eval(pos);
+    std::cout << "info string eval " << score << std::endl;
 }
 
 }  // namespace uci::extension
