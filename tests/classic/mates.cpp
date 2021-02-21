@@ -6,7 +6,7 @@
 
 auto info_handler = [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {};
 
-TEST_CASE("Checkmate") {
+TEST_CASE("Classic - Checkmate") {
     const std::pair<std::string, std::string> tests[] = {
         {"3k4/8/3K4/8/5R2/8/8/8 w - - 0 1", "f4f8"},
         {"8/8/8/5r2/8/3k4/8/3K4 b - - 0 1", "f5f1"},
@@ -24,7 +24,7 @@ TEST_CASE("Checkmate") {
     }
 }
 
-TEST_CASE("Checkmate with castling") {
+TEST_CASE("Classic - Checkmate with castling") {
     const std::pair<std::string, std::string> tests[] = {
         {"8/8/8/8/8/8/7R/1k2K2R w K - 0 1", "e1g1"},
         {"1K2k2r/7r/8/8/8/8/8/8 b k - 0 1", "e8g8"},
@@ -42,7 +42,7 @@ TEST_CASE("Checkmate with castling") {
     }
 }
 
-TEST_CASE("Checkmate 50moves priority") {
+TEST_CASE("Classic - Checkmate 50moves priority") {
     const std::pair<std::string, std::string> tests[] = {
         {"7k/1R6/R7/8/8/8/8/4K3 w - - 99 1", "a6a8"},
         {"4k3/8/8/8/8/r7/1r6/7K b - - 99 1", "a3a1"},
