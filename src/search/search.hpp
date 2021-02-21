@@ -11,5 +11,6 @@ using search_return = std::pair<libchess::Move, libchess::Move>;
 using search_type = std::function<search_return(libchess::Position pos, const info_printer info)>;
 
 extern search_type search;
+extern std::function<int(const libchess::Position &pos)> eval;
 
 #endif
