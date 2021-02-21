@@ -11,6 +11,8 @@
 // Searches
 #include "../../search/classic/eval.hpp"
 #include "../../search/classic/search.hpp"
+#include "../../search/greedy/eval.hpp"
+#include "../../search/greedy/search.hpp"
 #include "../../search/random/search.hpp"
 
 namespace uci {
@@ -251,6 +253,9 @@ void listen() {
     if (options::searchtype.get() == "Classic") {
         player::search = classic::search;
         player::eval = classic::eval;
+    } else if (options::searchtype.get() == "Greedy") {
+        player::search = greedy::search;
+        player::eval = greedy::eval;
     } else if (options::searchtype.get() == "Random") {
         player::search = rando::search;
     } else {
