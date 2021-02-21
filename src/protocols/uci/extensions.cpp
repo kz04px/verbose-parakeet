@@ -54,7 +54,7 @@ void split(libchess::Position &pos, std::stringstream &ss) {
     std::cout << std::endl;
 }
 
-void display(libchess::Position &pos) {
+void display(const libchess::Position &pos) {
     std::cout << pos << std::endl;
 }
 

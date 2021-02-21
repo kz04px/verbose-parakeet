@@ -8,7 +8,7 @@ namespace uci::extension {
 
 void perft(libchess::Position &pos, std::stringstream &ss);
 void split(libchess::Position &pos, std::stringstream &ss);
-void display(libchess::Position &pos);
+void display(const libchess::Position &pos);
 
 }  // namespace uci::extension
 
