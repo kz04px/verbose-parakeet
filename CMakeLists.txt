@@ -36,6 +36,9 @@ add_executable(
     src/search/pv.cpp
     src/search/controller.cpp
 
+    src/search/greedy/eval.cpp
+    src/search/greedy/search.cpp
+
     src/search/classic/alphabeta.cpp
     src/search/classic/eval.cpp
     src/search/classic/search.cpp
@@ -53,6 +56,12 @@ add_executable(
     tests/classic/underpromote.cpp
     tests/classic/50moves.cpp
 
+    tests/greedy/50moves.cpp
+    tests/greedy/mates.cpp
+    tests/greedy/movetime.cpp
+    tests/greedy/stalemate.cpp
+    tests/greedy/underpromote.cpp
+
     src/options.cpp
 
     src/protocols/uci/uci.cpp
@@ -61,6 +70,9 @@ add_executable(
     src/search/search.cpp
     src/search/pv.cpp
     src/search/controller.cpp
+
+    src/search/greedy/eval.cpp
+    src/search/greedy/search.cpp
 
     src/search/classic/alphabeta.cpp
     src/search/classic/eval.cpp
