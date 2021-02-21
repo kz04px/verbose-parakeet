@@ -5,11 +5,13 @@
 #include <sstream>
 #include <thread>
 #include "../../options.hpp"
-#include "../../search/classic/search.hpp"
 #include "../../search/controller.hpp"
-#include "../../search/random/search.hpp"
 #include "../../search/search.hpp"
 #include "extensions.hpp"
+// Searches
+#include "../../search/classic/eval.hpp"
+#include "../../search/classic/search.hpp"
+#include "../../search/random/search.hpp"
 
 namespace uci {
 
@@ -241,6 +243,7 @@ void listen() {
     // Set the search type
     if (options::searchtype.get() == "Classic") {
         search = classic::search;
+        eval = classic::eval;
     } else if (options::searchtype.get() == "Random") {
         search = rando::search;
     } else {
@@ -275,6 +278,9 @@ void listen() {
             extension::perft(pos, ss);
         } else if (word == "split") {
             extension::split(pos, ss);
+        } else if (word == "eval") {
+            const auto score = eval(pos);
+            std::cout << "info string eval " << score << std::endl;
         } else if (word == "quit") {
             break;
         }
