@@ -231,7 +231,6 @@ void listen() {
         ss >> word;
 
         if (word == "isready") {
-            isready();
             break;
         } else if (word == "setoption") {
             setoption(ss);
@@ -251,6 +250,7 @@ void listen() {
     }
 
     auto pos = libchess::Position{"startpos"};
+    isready();
 
     while (true) {
         std::string input;
