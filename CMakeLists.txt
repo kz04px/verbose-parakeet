@@ -3,12 +3,10 @@ cmake_minimum_required(VERSION 3.10)
 # Project
 project(Swizles VERSION 1.0 LANGUAGES CXX)
 
-# Find packages
-find_package(Catch2 CONFIG REQUIRED)
-
 # Base directory relative includes
 include_directories(.)
 include_directories(./libs/libchess/src/)
+include_directories(./libs/catch2/)
 
 # Flags
 set(CMAKE_CXX_STANDARD 17)
