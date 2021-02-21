@@ -39,7 +39,8 @@ inline std::ostream &operator<<(std::ostream &os, const Combo &combo) {
 inline std::ostream &operator<<(std::ostream &os, const String &string) {
     os << "option";
     os << " name " << string.name;
-    os << " value " << string.value;
+    os << " type string";
+    os << " default " << string.value;
     return os;
 }
 
