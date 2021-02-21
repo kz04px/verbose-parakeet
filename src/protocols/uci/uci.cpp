@@ -286,8 +286,7 @@ void listen() {
         } else if (word == "split") {
             extension::split(pos, ss);
         } else if (word == "eval") {
-            const auto score = player::eval(pos);
-            std::cout << "info string eval " << score << std::endl;
+            extension::eval(pos);
         } else if (word == "quit") {
             break;
         }
