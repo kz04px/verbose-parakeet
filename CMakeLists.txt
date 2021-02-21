@@ -42,6 +42,28 @@ add_executable(
     src/search/classic/alphabeta.cpp
     src/search/classic/eval.cpp
     src/search/classic/search.cpp
+
+    # libchess
+    libs/libchess/src/attackers.cpp
+    libs/libchess/src/is_legal.cpp
+    libs/libchess/src/libchess
+    libs/libchess/src/predict_hash.cpp
+    libs/libchess/src/checkers.cpp
+    libs/libchess/src/king_allowed.cpp
+    libs/libchess/src/makemove.cpp
+    libs/libchess/src/set_fen.cpp
+    libs/libchess/src/check_evasions.cpp
+    libs/libchess/src/legal_captures.cpp
+    libs/libchess/src/movegen.cpp
+    libs/libchess/src/square_attacked.cpp
+    libs/libchess/src/count_moves.cpp
+    libs/libchess/src/legal_moves.cpp
+    libs/libchess/src/perft.cpp
+    libs/libchess/src/squares_attacked.cpp
+    libs/libchess/src/get_fen.cpp
+    libs/libchess/src/legal_noncaptures.cpp
+    libs/libchess/src/pinned.cpp
+    libs/libchess/src/undomove.cpp
 )
 
 # Add test executable
@@ -78,9 +100,28 @@ add_executable(
     src/search/classic/alphabeta.cpp
     src/search/classic/eval.cpp
     src/search/classic/search.cpp
+
+    # libchess
+    libs/libchess/src/attackers.cpp
+    libs/libchess/src/is_legal.cpp
+    libs/libchess/src/libchess
+    libs/libchess/src/predict_hash.cpp
+    libs/libchess/src/checkers.cpp
+    libs/libchess/src/king_allowed.cpp
+    libs/libchess/src/makemove.cpp
+    libs/libchess/src/set_fen.cpp
+    libs/libchess/src/check_evasions.cpp
+    libs/libchess/src/legal_captures.cpp
+    libs/libchess/src/movegen.cpp
+    libs/libchess/src/square_attacked.cpp
+    libs/libchess/src/count_moves.cpp
+    libs/libchess/src/legal_moves.cpp
+    libs/libchess/src/perft.cpp
+    libs/libchess/src/squares_attacked.cpp
+    libs/libchess/src/get_fen.cpp
+    libs/libchess/src/legal_noncaptures.cpp
+    libs/libchess/src/pinned.cpp
+    libs/libchess/src/undomove.cpp
 )
 
 set_property(TARGET swizzles-test PROPERTY INTERPROCEDURAL_OPTIMIZATION_RELEASE FALSE)
-
-target_link_libraries(swizzles "${CMAKE_CURRENT_LIST_DIR}/libs/libchess/build/static/libchess.a")
-target_link_libraries(swizzles-test Catch2::Catch2 "${CMAKE_CURRENT_LIST_DIR}/libs/libchess/build/static/libchess.a")
