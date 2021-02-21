@@ -32,6 +32,11 @@ struct Combo {
     }
 };
 
+struct String {
+    std::string name;
+    std::string value;
+};
+
 namespace options {
 
 extern Spin hash;

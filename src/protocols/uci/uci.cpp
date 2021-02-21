@@ -36,6 +36,13 @@ inline std::ostream &operator<<(std::ostream &os, const Combo &combo) {
     return os;
 }
 
+inline std::ostream &operator<<(std::ostream &os, const String &string) {
+    os << "option";
+    os << " name " << string.name;
+    os << " value " << string.value;
+    return os;
+}
+
 template <typename T>
 [[nodiscard]] constexpr T clamp(const T min, const T max, const T val) {
     return (val < min ? min : val > max ? max : val);
