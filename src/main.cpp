@@ -6,6 +6,8 @@ int main() {
     std::setbuf(stdin, NULL);
     std::setbuf(stdout, NULL);
 
+    srand(time(0));
+
 #ifndef NDEBUG
     std::cout << "DEBUG BUILD" << std::endl;
 #endif
