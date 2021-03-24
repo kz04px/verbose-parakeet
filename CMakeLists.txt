@@ -51,9 +51,9 @@ add_executable(
     src/search/greedy/search.cpp
 
     src/search/classic/alphabeta.cpp
-    src/search/classic/eval.cpp
-    src/search/classic/phase.cpp
     src/search/classic/search.cpp
+    src/search/classic/eval/eval.cpp
+    src/search/classic/eval/phase.cpp
 
     # libchess
     libs/libchess/src/attackers.cpp
@@ -120,9 +120,9 @@ add_executable(
     src/search/greedy/search.cpp
 
     src/search/classic/alphabeta.cpp
-    src/search/classic/eval.cpp
-    src/search/classic/phase.cpp
     src/search/classic/search.cpp
+    src/search/classic/eval/eval.cpp
+    src/search/classic/eval/phase.cpp
 
     # libchess
     libs/libchess/src/attackers.cpp

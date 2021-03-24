@@ -2,7 +2,7 @@
 #define CLASSIC_PHASE_HPP
 
 #include <libchess/position.hpp>
-#include "../score.hpp"
+#include "../../score.hpp"
 
 namespace classic {
 

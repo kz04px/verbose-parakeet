@@ -2,7 +2,7 @@
 #include <cassert>
 #include <limits>
 #include "../controller.hpp"
-#include "eval.hpp"
+#include "eval/eval.hpp"
 
 namespace classic {
 

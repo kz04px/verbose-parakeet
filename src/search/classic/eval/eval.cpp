@@ -1,6 +1,6 @@
 #include "eval.hpp"
 #include <array>
-#include "../score.hpp"
+#include "../../score.hpp"
 #include "phase.hpp"
 #include "pst.hpp"
 

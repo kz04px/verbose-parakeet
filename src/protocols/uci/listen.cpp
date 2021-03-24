@@ -3,7 +3,7 @@
 #include "extensions/extensions.hpp"
 #include "uci.hpp"
 // Searches
-#include "../../search/classic/eval.hpp"
+#include "../../search/classic/eval/eval.hpp"
 #include "../../search/classic/search.hpp"
 #include "../../search/greedy/eval.hpp"
 #include "../../search/greedy/search.hpp"
