@@ -1,7 +1,7 @@
 #include <iostream>
 #include "options.hpp"
 #include "protocols/manual/listen.hpp"
-#include "protocols/uci.hpp"
+#include "protocols/uci/uci.hpp"
 
 int main() {
     std::setbuf(stdin, NULL);

@@ -1,4 +1,4 @@
-#include "../uci.hpp"
+#include "uci.hpp"
 #include <cassert>
 #include <iostream>
 #include <libchess/position.hpp>
@@ -16,6 +16,9 @@
 #include "../../search/random/search.hpp"
 
 namespace uci {
+
+search_type search_func = [](libchess::Position pos, const info_printer info) -> search_return { return {}; };
+std::function<int(const libchess::Position &pos)> eval_func = [](const libchess::Position &pos) { return 0; };
 
 inline std::ostream &operator<<(std::ostream &os, const Spin &spin) {
     os << "option";
@@ -151,7 +154,7 @@ void search_wrapper(libchess::Position pos) {
         std::cout << std::endl;
     };
 
-    const auto &[bestmove, ponder] = player::search(pos, uci_printer);
+    const auto &[bestmove, ponder] = search_func(pos, uci_printer);
     std::cout << "bestmove " << bestmove;
     if (ponder) {
         std::cout << " ponder " << ponder;
@@ -251,13 +254,13 @@ void listen() {
 
     // Set the search type
     if (options::searchtype.get() == "Classic") {
-        player::search = classic::search;
-        player::eval = classic::eval;
+        search_func = classic::search;
+        eval_func = classic::eval;
     } else if (options::searchtype.get() == "Greedy") {
-        player::search = greedy::search;
-        player::eval = greedy::eval;
+        search_func = greedy::search;
+        eval_func = greedy::eval;
     } else if (options::searchtype.get() == "Random") {
-        player::search = rando::search;
+        search_func = rando::search;
     } else {
         return;
     }

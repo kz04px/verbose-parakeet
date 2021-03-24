@@ -3,8 +3,12 @@
 
 #include <libchess/position.hpp>
 #include <sstream>
+#include "../../search/search.hpp"
 
 namespace uci {
+
+extern search_type search_func;
+extern std::function<int(const libchess::Position &pos)> eval_func;
 
 void listen();
 

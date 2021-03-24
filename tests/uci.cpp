@@ -1,4 +1,4 @@
-#include "../src/protocols/uci.hpp"
+#include "../src/protocols/uci/uci.hpp"
 #include <catch2/catch.hpp>
 #include <libchess/position.hpp>
 #include <sstream>

@@ -4,7 +4,7 @@
 #include <sstream>
 #include "../../options.hpp"
 #include "../../search/search.hpp"
-#include "../uci.hpp"
+#include "uci.hpp"
 
 namespace uci::extension {
 
@@ -60,7 +60,7 @@ void display(const libchess::Position &pos) {
 }
 
 void eval(const libchess::Position &pos) {
-    const auto score = player::eval(pos);
+    const auto score = eval_func(pos);
     std::cout << "info string eval " << score << std::endl;
 }
 

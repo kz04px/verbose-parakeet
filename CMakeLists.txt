@@ -34,7 +34,6 @@ add_executable(
     src/protocols/manual/listen.cpp
     src/protocols/manual/play.cpp
 
-    src/search/search.cpp
     src/search/pv.cpp
     src/search/controller.cpp
 
@@ -92,7 +91,6 @@ add_executable(
     src/protocols/uci/uci.cpp
     src/protocols/uci/extensions.cpp
 
-    src/search/search.cpp
     src/search/pv.cpp
     src/search/controller.cpp
 
