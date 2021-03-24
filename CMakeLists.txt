@@ -52,6 +52,7 @@ add_executable(
 
     src/search/classic/alphabeta.cpp
     src/search/classic/eval.cpp
+    src/search/classic/phase.cpp
     src/search/classic/search.cpp
 
     # libchess
@@ -120,6 +121,7 @@ add_executable(
 
     src/search/classic/alphabeta.cpp
     src/search/classic/eval.cpp
+    src/search/classic/phase.cpp
     src/search/classic/search.cpp
 
     # libchess

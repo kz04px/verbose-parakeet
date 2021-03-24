@@ -5,7 +5,7 @@
 
 namespace classic {
 
-int eval(const libchess::Position &pos);
+[[nodiscard]] int eval(const libchess::Position &pos);
 
 }  // namespace classic
 

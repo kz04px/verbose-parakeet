@@ -1,6 +1,7 @@
 #include "eval.hpp"
 #include <array>
 #include "../score.hpp"
+#include "phase.hpp"
 #include "pst.hpp"
 
 namespace classic {
@@ -31,14 +32,12 @@ template <libchess::Side side>
     return score;
 }
 
-int eval(const libchess::Position &pos) {
+[[nodiscard]] int eval(const libchess::Position &pos) {
     Score score;
     score += eval_side<libchess::Side::White>(pos);
     score -= eval_side<libchess::Side::Black>(pos);
-    if (pos.turn() == libchess::Side::Black) {
-        return -score.phase(pos);
-    }
-    return score.phase(pos);
+    const int phased_score = phase(pos, score);
+    return pos.turn() == libchess::Side::White ? phased_score : -phased_score;
 }
 
 }  // namespace classic
