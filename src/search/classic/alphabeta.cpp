@@ -2,7 +2,7 @@
 #include <cassert>
 #include <limits>
 #include "../controller.hpp"
-#include "eval/eval.hpp"
+#include "qsearch.hpp"
 
 namespace classic {
 
@@ -31,7 +31,7 @@ int alphabeta(libchess::Position &pos, Stack *ss, int alpha, const int beta, int
     }
 
     if (depth <= 0) {
-        return eval(pos);
+        return qsearch(pos, alpha, beta);
     }
 
     if (controller.should_stop()) {

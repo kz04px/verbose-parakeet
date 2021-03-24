@@ -52,6 +52,7 @@ add_executable(
 
     src/search/classic/alphabeta.cpp
     src/search/classic/search.cpp
+    src/search/classic/qsearch.cpp
     src/search/classic/eval/eval.cpp
     src/search/classic/eval/phase.cpp
 
@@ -121,6 +122,7 @@ add_executable(
 
     src/search/classic/alphabeta.cpp
     src/search/classic/search.cpp
+    src/search/classic/qsearch.cpp
     src/search/classic/eval/eval.cpp
     src/search/classic/eval/phase.cpp
 
