@@ -54,16 +54,28 @@ int alphabeta(libchess::Position &pos, Stack *ss, int alpha, const int beta, int
     auto best_score = std::numeric_limits<int>::min();
 
     for (const auto &move : moves) {
+    for (auto i = 0; i < moves.size(); ++i) {
         controller.increment_nodes();
 
-        pos.makemove(move);
-        const auto score = -alphabeta(pos, ss + 1, -beta, -alpha, depth - 1);
+        pos.makemove(moves[i]);
+
+        int score = 0;
+
+        if (i == 0) {
+            score = -alphabeta(pos, ss + 1, -beta, -alpha, depth - 1);
+        } else {
+            score = -alphabeta(pos, ss + 1, -alpha - 1, -alpha, depth - 1);
+            if (alpha < score && score < beta) {
+                score = -alphabeta(pos, ss + 1, -beta, -score, depth - 1);
+            }
+        }
+
         pos.undomove();
 
         if (score > best_score) {
             best_score = score;
             ss->pv.clear();
-            ss->pv.push_back(move);
+            ss->pv.push_back(moves[i]);
             for (const auto &move : (ss + 1)->pv) {
                 ss->pv.push_back(move);
             }
