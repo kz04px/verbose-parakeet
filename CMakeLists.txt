@@ -28,8 +28,18 @@ add_executable(
     src/options.cpp
 
     # Protocols
-    src/protocols/uci/extensions.cpp
+    src/protocols/uci/isready.cpp
+    src/protocols/uci/listen.cpp
+    src/protocols/uci/moves.cpp
+    src/protocols/uci/position.cpp
+    src/protocols/uci/search.cpp
+    src/protocols/uci/setoption.cpp
     src/protocols/uci/uci.cpp
+    src/protocols/uci/ucinewgame.cpp
+    src/protocols/uci/extensions/display.cpp
+    src/protocols/uci/extensions/eval.cpp
+    src/protocols/uci/extensions/perft.cpp
+    src/protocols/uci/extensions/split.cpp
     src/protocols/manual/display.cpp
     src/protocols/manual/listen.cpp
     src/protocols/manual/play.cpp
@@ -88,8 +98,19 @@ add_executable(
 
     src/options.cpp
 
+    # Protocols
+    src/protocols/uci/isready.cpp
+    src/protocols/uci/listen.cpp
+    src/protocols/uci/moves.cpp
+    src/protocols/uci/position.cpp
+    src/protocols/uci/search.cpp
+    src/protocols/uci/setoption.cpp
     src/protocols/uci/uci.cpp
-    src/protocols/uci/extensions.cpp
+    src/protocols/uci/ucinewgame.cpp
+    src/protocols/uci/extensions/display.cpp
+    src/protocols/uci/extensions/eval.cpp
+    src/protocols/uci/extensions/perft.cpp
+    src/protocols/uci/extensions/split.cpp
 
     src/search/pv.cpp
     src/search/controller.cpp

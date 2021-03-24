@@ -19,6 +19,7 @@ void position(libchess::Position &pos, std::stringstream &ss);
 void moves(libchess::Position &pos, std::stringstream &ss);
 void go(libchess::Position &pos, std::stringstream &ss);
 void setoption(std::stringstream &ss);
+void stop();
 
 }  // namespace uci
 
