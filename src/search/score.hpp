@@ -1,8 +1,6 @@
 #ifndef EVAL_SCORE_HPP
 #define EVAL_SCORE_HPP
 
-#include <libchess/position.hpp>
-
 class Score {
    public:
     using value_type = int;
