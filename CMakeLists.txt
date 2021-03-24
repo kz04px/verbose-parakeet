@@ -27,8 +27,12 @@ add_executable(
 
     src/options.cpp
 
+    # Protocols
     src/protocols/uci/extensions.cpp
     src/protocols/uci/uci.cpp
+    src/protocols/manual/display.cpp
+    src/protocols/manual/listen.cpp
+    src/protocols/manual/play.cpp
 
     src/search/search.cpp
     src/search/pv.cpp

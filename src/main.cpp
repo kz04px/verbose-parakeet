@@ -1,5 +1,6 @@
 #include <iostream>
 #include "options.hpp"
+#include "protocols/manual/listen.hpp"
 #include "protocols/uci.hpp"
 
 int main() {
@@ -17,6 +18,8 @@ int main() {
 
     if (input == "uci") {
         uci::listen();
+    } else if (input == "manual") {
+        manual::listen();
     } else if (input == "about") {
         std::cout << "Swizzles\n";
         std::cout << "Authored by kz04px\n";
