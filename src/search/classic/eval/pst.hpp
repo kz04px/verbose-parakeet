@@ -78,6 +78,15 @@ template <libchess::Side side>
     }
 }
 
+static_assert(pst_value<libchess::Side::White>(libchess::Piece::Pawn, libchess::squares::A2) == Score{-1, -17});
+static_assert(pst_value<libchess::Side::Black>(libchess::Piece::Pawn, libchess::squares::A7) == Score{-1, -17});
+static_assert(pst_value<libchess::Side::White>(libchess::Piece::Pawn, libchess::squares::A7) == Score{118, 82});
+static_assert(pst_value<libchess::Side::Black>(libchess::Piece::Pawn, libchess::squares::A2) == Score{118, 82});
+static_assert(pst_value<libchess::Side::White>(libchess::Piece::Knight, libchess::squares::D4) == Score{3, 16});
+static_assert(pst_value<libchess::Side::Black>(libchess::Piece::Knight, libchess::squares::D5) == Score{3, 16});
+static_assert(pst_value<libchess::Side::White>(libchess::Piece::Knight, libchess::squares::D5) == Score{33, 31});
+static_assert(pst_value<libchess::Side::Black>(libchess::Piece::Knight, libchess::squares::D4) == Score{33, 31});
+
 }  // namespace classic
 
 #endif
