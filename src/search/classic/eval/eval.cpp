@@ -15,9 +15,16 @@ constexpr Score piece_values[] = {
     {1000000, 1000000},
 };
 
+constexpr Score passed_pawn_value[8] = {{0, 0}, {5, 10}, {5, 10}, {7, 15}, {12, 25}, {20, 40}, {30, 60}, {0, 0}};
+
 template <libchess::Side side>
 [[nodiscard]] Score eval_side(const libchess::Position &pos) {
     Score score;
+
+    // Passed pawns
+    for (const auto sq : pos.passed_pawns(side)) {
+        score += passed_pawn_value[sq.rank()];
+    }
 
     for (const auto p : libchess::pieces) {
         // Piece values
