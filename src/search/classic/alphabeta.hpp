@@ -7,6 +7,7 @@
 namespace classic {
 
 constexpr int mate_score = 10000;
+constexpr int max_depth = 128;
 
 int alphabeta(libchess::Position &pos, Stack *ss, const int alpha, const int beta, const int depth);
 

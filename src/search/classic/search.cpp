@@ -28,7 +28,7 @@ std::pair<libchess::Move, libchess::Move> search(libchess::Position pos, const i
     controller.meh();
 
     // Create search stack
-    std::vector<Stack> ss{129};
+    std::vector<Stack> ss{max_depth + 1};
     for (std::size_t i = 0; i < ss.size(); ++i) {
         ss.at(i).ply = i;
     }
