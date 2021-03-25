@@ -1,6 +1,7 @@
 #include "eval.hpp"
 #include <array>
 #include "../../score.hpp"
+#include "king_safety.hpp"
 #include "phase.hpp"
 #include "pst.hpp"
 
@@ -21,6 +22,9 @@ constexpr Score passed_pawn_value[8] = {{0, 0}, {5, 10}, {5, 10}, {7, 15}, {12, 
 template <libchess::Side side>
 [[nodiscard]] Score eval_side(const libchess::Position &pos) {
     Score score;
+
+    // King safety
+    score += king_safety<side>(pos);
 
     // Passed pawns
     for (const auto sq : pos.passed_pawns(side)) {
