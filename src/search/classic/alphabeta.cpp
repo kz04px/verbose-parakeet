@@ -2,6 +2,7 @@
 #include <cassert>
 #include <limits>
 #include "../controller.hpp"
+#include "is_endgame.hpp"
 #include "qsearch.hpp"
 
 namespace classic {
@@ -48,6 +49,21 @@ int alphabeta(libchess::Position &pos, Stack *ss, int alpha, const int beta, int
         // Stalemate
         else {
             return 0;
+        }
+    }
+
+    // Null move pruning
+    if (ss->nullmove && !pvnode && !root && depth > 2 && !in_check && !is_endgame(pos)) {
+        constexpr int R = 2;
+
+        pos.makenull();
+        (ss + 1)->nullmove = false;
+        const int score = -alphabeta(pos, ss + 1, -beta, -beta + 1, depth - 1 - R);
+        pos.undonull();
+        (ss + 1)->nullmove = true;
+
+        if (score >= beta) {
+            return score;
         }
     }
 
