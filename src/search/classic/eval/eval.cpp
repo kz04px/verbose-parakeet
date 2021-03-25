@@ -19,7 +19,7 @@ constexpr Score piece_values[] = {
 constexpr Score knight_pair = {15, 15};
 constexpr Score bishop_pair = {25, 25};
 constexpr Score rook_open_file = {25, 25};
-constexpr Score turn_bonus = Score{10, 10};
+constexpr Score turn_bonus = {10, 10};
 constexpr Score passed_pawn_value[8] = {{0, 0}, {5, 10}, {5, 10}, {7, 15}, {12, 25}, {20, 40}, {30, 60}, {0, 0}};
 
 template <libchess::Side side>
