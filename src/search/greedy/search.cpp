@@ -8,7 +8,7 @@
 
 namespace greedy {
 
-search_return search(libchess::Position pos, const info_printer info) {
+search_return search(libchess::Position pos, const info_printer &info) {
     int best_score = std::numeric_limits<int>::lowest();
     std::vector<libchess::Move> best_moves;
     const auto moves = pos.legal_moves();

@@ -21,7 +21,22 @@ class Controller {
     using ms = std::chrono::milliseconds;
     using time_point = std::chrono::_V2::system_clock::time_point;
 
-    Controller() : depth_{1}, wtime_{0}, btime_{0}, winc_{0}, binc_{0}, nodes_{0}, stop_{false} {
+    Controller()
+        : nodes_{},
+          depth_{},
+          search_type_{SearchType::Depth},
+          search_time_{},
+          max_nodes_{},
+          max_depth_{1},
+          movestogo_{},
+          us_{},
+          movetime_{},
+          wtime_{},
+          winc_{},
+          btime_{},
+          binc_{},
+          start_{},
+          stop_{} {
     }
 
     void set_depth(int depth) noexcept {

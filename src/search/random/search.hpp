@@ -7,7 +7,7 @@
 
 namespace rando {
 
-search_return search(libchess::Position pos, const info_printer info) {
+search_return search(libchess::Position pos, const info_printer &info) {
     const auto moves = pos.legal_moves();
 
     if (!moves.empty()) {
