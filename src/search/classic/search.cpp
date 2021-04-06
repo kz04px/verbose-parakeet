@@ -32,6 +32,7 @@ std::pair<libchess::Move, libchess::Move> search(libchess::Position pos, const i
     for (std::size_t i = 0; i < ss.size(); ++i) {
         ss.at(i).ply = i;
         ss.at(i).nullmove = true;
+        ss.at(i).pv.clear();
     }
 
     // Iterative deepening
