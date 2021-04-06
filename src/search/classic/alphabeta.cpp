@@ -71,7 +71,6 @@ int alphabeta(libchess::Position &pos, Stack *ss, int alpha, const int beta, int
 
     auto best_score = std::numeric_limits<int>::min();
 
-    for (const auto &move : moves) {
     for (auto i = 0; i < moves.size(); ++i) {
         controller.increment_nodes();
 

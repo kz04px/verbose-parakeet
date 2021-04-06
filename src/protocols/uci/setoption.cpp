@@ -52,8 +52,6 @@ void setoption(std::stringstream &ss) {
             options::contempt.val = clamp(options::contempt.min, options::contempt.max, val);
         } else if (name == "SearchType") {
             options::searchtype.set(value);
-        } else if (name == "nnuepath") {
-            options::nnuepath.value = value;
         }
     } catch (...) {
     }

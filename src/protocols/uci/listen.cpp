@@ -7,9 +7,6 @@
 #include "../../search/classic/search.hpp"
 #include "../../search/greedy/eval.hpp"
 #include "../../search/greedy/search.hpp"
-#include "../../search/nnue/eval.hpp"
-#include "../../search/nnue/network.hpp"
-#include "../../search/nnue/search.hpp"
 #include "../../search/random/search.hpp"
 
 namespace uci {
@@ -40,20 +37,6 @@ void listen() {
     if (options::searchtype.get() == "Classic") {
         search_func = classic::search;
         eval_func = classic::eval;
-    } else if (options::searchtype.get() == "NNUE") {
-        try {
-            nnue::network.load_weights(options::nnuepath.value);
-        } catch (std::exception &e) {
-            std::cerr << e.what() << "\n";
-            return;
-        } catch (const char *e) {
-            std::cerr << e << "\n";
-            return;
-        } catch (...) {
-            return;
-        }
-        search_func = nnue::search;
-        eval_func = nnue::eval;
     } else if (options::searchtype.get() == "Greedy") {
         search_func = greedy::search;
         eval_func = greedy::eval;

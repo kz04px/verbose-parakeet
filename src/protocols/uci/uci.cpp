@@ -41,7 +41,6 @@ void uci() {
     std::cout << options::threads << "\n";
     std::cout << options::contempt << "\n";
     std::cout << options::searchtype << "\n";
-    std::cout << options::nnuepath << "\n";
 
     std::cout << "uciok" << std::endl;
 }
