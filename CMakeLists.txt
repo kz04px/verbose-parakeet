@@ -8,9 +8,11 @@ include_directories(.)
 include_directories(./libs/libchess/src/)
 include_directories(./libs/catch2/)
 
+# Find packages
+find_package(Threads REQUIRED)
+
 # Flags
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS "-pthread")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -march=native -DNDEBUG")
 set(CMAKE_INTERPROCEDURAL_OPTIMIZATION_RELEASE TRUE)
@@ -150,3 +152,5 @@ add_executable(
 )
 
 set_property(TARGET swizzles-test PROPERTY INTERPROCEDURAL_OPTIMIZATION_RELEASE FALSE)
+target_link_libraries(swizzles PUBLIC Threads::Threads)
+target_link_libraries(swizzles-test PUBLIC Threads::Threads)
