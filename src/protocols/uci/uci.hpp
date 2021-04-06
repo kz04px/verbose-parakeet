@@ -1,6 +1,7 @@
 #ifndef UCI_HPP
 #define UCI_HPP
 
+#include <functional>
 #include <libchess/position.hpp>
 #include <sstream>
 #include "../../search/search.hpp"
