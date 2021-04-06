@@ -4,7 +4,7 @@
 #include <string>
 #include "../../src/search/controller.hpp"
 
-auto info_handler = [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {};
+static auto info_handler = [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {};
 
 TEST_CASE("Greedy - Search") {
     const std::pair<std::string, std::string> tests[] = {

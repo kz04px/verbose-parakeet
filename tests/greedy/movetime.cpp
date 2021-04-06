@@ -4,7 +4,7 @@
 #include "../../src/search/controller.hpp"
 #include "../../src/search/greedy/search.hpp"
 
-auto info_handler = [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {};
+static auto info_handler = [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {};
 
 TEST_CASE("Greedy - Movetime") {
     constexpr std::array<int, 3> movetimes = {20, 100, 200};
