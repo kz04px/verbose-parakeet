@@ -4,7 +4,7 @@
 #include "../../src/search/classic/search.hpp"
 #include "../../src/search/controller.hpp"
 
-auto info_handler = [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {};
+static auto info_handler = [](int depth, int score, std::uint64_t nodes, int time, const PV &pv) {};
 
 TEST_CASE("Classic - Movetime") {
     constexpr std::array<int, 3> movetimes = {20, 100, 200};
