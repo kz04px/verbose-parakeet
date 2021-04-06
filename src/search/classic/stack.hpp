@@ -7,6 +7,7 @@ namespace classic {
 
 struct Stack {
     int ply;
+    bool nullmove;
     PV pv;
 };
 

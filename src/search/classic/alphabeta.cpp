@@ -14,6 +14,8 @@ int alphabeta(libchess::Position &pos, Stack *ss, int alpha, const int beta, int
 
     ss->pv.clear();
     const auto in_check = pos.in_check();
+    const auto pvnode = beta - alpha > 1;
+    const auto root = ss->ply == 0;
 
     if (in_check) {
         depth++;
