@@ -55,7 +55,7 @@ void go(libchess::Position &pos, std::stringstream &ss) {
             controller.set_winc(std::stoi(word));
         } else if (word == "binc" && ss >> word) {
             controller.set_binc(std::stoi(word));
-        } else if (word == "infinite" && ss >> word) {
+        } else if (word == "infinite") {
             controller.set_infinite();
         }
     }
