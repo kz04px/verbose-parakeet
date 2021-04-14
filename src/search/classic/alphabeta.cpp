@@ -101,7 +101,7 @@ int alphabeta(libchess::Position &pos, Stack *ss, int alpha, const int beta, int
         if (score > alpha) {
             alpha = score;
 
-            if (score > beta) {
+            if (score >= beta) {
                 break;
             }
         }
